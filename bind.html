@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bind</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script src="DN.js"></script>
+<script>
+	console.log($)
+	var foo = {
+		value: 1
+	};
+	function bar() {
+		console.dir(this)
+		// this.name = 'zhangrui'
+		// console.log(this.value);
+	}
+	bar.prototype.hibit = function(){
+		console.log('我有一个坏毛病');
+	}
+	// var a = 123;
+	// $.myBind(a,foo)
+
+	var a = $.myBind(bar, foo);
+	// a()
+	var A = new a();
+	// console.log(A.name)
+	console.log(A.hibit())
+	console.log(bar.prototype.hibit())
+// 改进
+// OOP  我们不能直接修改Function原型链
+// 2 修改fResult.prototype 直接修改了 bar.prototype
+// 
+
+</script>
